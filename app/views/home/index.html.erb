@@ -8,7 +8,7 @@
       <%= link_to "Sign Up", new_user_registration_path, class:"bt-link"%>
     <% else %>
       <%= link_to "Categories", groups_path, class:"top-link"%>
-      <%= link_to "Sign Out", destroy_user_session_path, class:"bt-link"%>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete}, class:"bt-link"%>
     <% end %>
   </nav>
 </div>
