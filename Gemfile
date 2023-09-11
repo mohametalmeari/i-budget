@@ -78,4 +78,3 @@ gem 'devise', github: 'heartcombo/devise'
 gem 'cancancan'
 
 gem 'rails-controller-testing'
-
