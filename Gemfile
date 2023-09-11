@@ -73,5 +73,3 @@ end
 gem 'rubocop'
 
 gem 'devise', github: 'heartcombo/devise'
-
-
