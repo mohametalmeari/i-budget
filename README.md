@@ -33,7 +33,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Catalog of My Things <a name="about-project"></a>
+# 📖 i-budget <a name="about-project"></a>
 
 *i-budget* is a mobile web application designed for efficient budget management. Users can register, log in, add transactions to categories, and monitor their expenses. With secure authentication, PostgreSQL database, and comprehensive testing, this app ensures seamless and secure budget tracking.
 
@@ -101,7 +101,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd my-things
+  cd i-budget
   bundle install
 ```
 
