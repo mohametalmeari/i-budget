@@ -71,3 +71,7 @@ group :test do
 end
 
 gem 'rubocop'
+
+gem 'devise', github: 'heartcombo/devise'
+
+
