@@ -1,0 +1,25 @@
+<%= form_with model: @group, url: groups_path  do |f| %>
+  <div class="container">
+    <header>
+      <%= link_to groups_path, class:"back-link" do %>
+        <%= image_tag 'back-arrow.svg', alt: '🡠', class: "back-img" %>
+      <% end %>
+      <h2>NEW CATEGORY</h2>
+      <%= f.submit "Next", class: 'next-link' %>
+    </header>
+    <div class="form-container">
+      <div class="field">
+        <%= f.text_field :name, placeholder: 'Category name', class: 'input-field' %>
+      </div>
+      <div class="dash"></div>
+      <div class="icons-field">
+        <% @icons_url.each do |icon| %>
+          <label>
+            <%= f.radio_button :icon, icon, class: 'radio-input'%>
+            <%= image_tag icon, alt: icon, class: "img-icon" %>
+          </label>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="container">
+    <header>
+      <%= link_to root_path, class:"back-link" do %>
+        <%= image_tag 'back-arrow.svg', alt: '🡠', class: "back-img" %>
+      <% end %>
+      <h2>LOGIN</h2>
+      <%= f.submit "Log In", class: 'next-link' %>
+    </header>
+    <div class="form-container">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'input-field' %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'input-field' %>
+      </div>
+    </div>
+  </div>
+<% end %>

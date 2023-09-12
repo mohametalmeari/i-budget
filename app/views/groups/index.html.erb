@@ -1,0 +1,30 @@
+<div class="container">
+  <header>
+    <%= link_to root_path, class:"back-link" do %>
+      <%= image_tag 'back-arrow.svg', alt: '🡠', class: "back-img" %>
+    <% end %>
+    <h2>CATEGORIES</h2>
+    <span class="next-link"></span>
+  </header>
+  <div class="cards-container">
+    <div class="cards">
+      <% @groups.each do |group|%>
+        <% if can? :read, group %>
+          <%= link_to group_records_path(group) do%>
+            <div class="group-card">
+              <%= image_tag (group.icon || 'icons/01.jpg'), alt: group.icon, class: "img-icon" %>
+              <span class="card-name"><%= group.name %></span>
+              <span class="amount">$ <%= group.total_amount %></span>
+            </div>
+          <% end %>
+          <% if current_user.role == 'admin' %>
+            <p> Created by <%= group.user.name %> </p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="btn-container">
+      <%= link_to "Create Category", new_group_path, class:"create-btn" %>
+    </div>
+  </div>
+</div>

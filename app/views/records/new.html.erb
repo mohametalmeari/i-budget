@@ -1,0 +1,32 @@
+<%= form_with model: @record, url: group_records_path(@group) do |f| %>
+  <div class="container">
+    <header>
+      <%= link_to group_records_path(params[:group_id]), class:"back-link" do %>
+        <%= image_tag 'back-arrow.svg', alt: '🡠', class: "back-img" %>
+      <% end %>
+      <h2>NEW RECORD</h2>
+      <%= f.submit "Next", class: 'next-link' %>
+    </header>
+    <div class="form-container">
+      <div class="field">
+        <%= f.text_field :name, placeholder: 'Record name', class: 'input-field' %>
+      </div>
+      <div class="dash"></div>
+      <div class="field">
+        <%= f.number_field :amount, step: 0.01, placeholder: 'Amount', class: 'input-field' %>
+      </div>
+      <div class="dash"></div>
+      <div class="groups-selection">
+        <% @groups.each do |group| %>
+          <label>
+            <div class="group-card">
+              <%= f.check_box :group, { multiple: true,  checked: group == @group }, group.id, nil%>
+              <%= image_tag (group.icon || 'icons/01.jpg'), alt: group.icon, class: "img-icon" %>
+              <span class="card-name"><%= group.name %></span>
+            </div>
+          </label>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

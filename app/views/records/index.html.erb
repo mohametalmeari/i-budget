@@ -1,0 +1,27 @@
+<div class="container">
+  <header>
+    <%= link_to groups_path, class:"back-link" do %>
+      <%= image_tag 'back-arrow.svg', alt: '🡠', class: "back-img" %>
+    <% end %>
+    <h2>RECORDS</h2>
+    <span class="next-link"></span>
+  </header>
+  <div class="group-info">
+    <%= image_tag (@group.icon || 'icons/01.jpg'), alt: @group.icon, class: "img-icon" %>
+    <span class="group-info-name"><%= @group.name%></span>
+    <span class="amount">$ <%= @group.total_amount%></span>
+  </div>
+  <div class="cards-container">
+    <div class="cards">
+      <% @records.each do |record|%>
+        <div class="record-card">
+          <span class="card-name" > Record: <%= record.name %></span>
+          <span class="amount"> $ <%= record.amount %></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="btn-container">
+      <%= link_to "Create Record", new_group_record_path(params[:group_id]), class:"create-btn" %>
+    </div>
+  </div>
+</div>
