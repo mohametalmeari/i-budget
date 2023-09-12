@@ -20,7 +20,7 @@ RSpec.describe 'Groups#Index', type: :feature do
     sleep 1
   end
 
-  scenario 'Create/Edit/Delete a group' do
+  scenario 'Create a group' do
     click_link 'Create Category'
     fill_in 'group[name]', with: 'New Category'
     find('img[alt="icons/05.jpg"]').click

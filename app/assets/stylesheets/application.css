@@ -163,7 +163,8 @@ header {
 
 .input-field {
   border: none;
-  border-bottom: solid 3px var(--bg-color);
+
+  /* border-bottom: solid 3px var(--bg-color); */
   outline: none;
   padding: 16px;
   flex: 1;
@@ -272,4 +273,19 @@ form {
 .groups-selection {
   display: flex;
   flex-direction: column;
+}
+
+.back-img {
+  width: 1.5rem;
+}
+
+.amount {
+  font-family: ProximaNovaBold, Arial, sans-serif;
+}
+
+.dash {
+  background-color: var(--text-color);
+  box-shadow: 0 0 1px 0.2px var(--text-color);
+  z-index: 99;
+  margin: 0 16px;
 }

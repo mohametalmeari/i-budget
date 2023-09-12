@@ -20,7 +20,7 @@ RSpec.describe 'Records#Index', type: :feature do
     sleep 1
   end
 
-  scenario 'Create/Edit/Delete a record' do
+  scenario 'Create a record' do
     click_link 'Create Category'
     fill_in 'group[name]', with: 'Some Category'
     find('img[alt="icons/05.jpg"]').click

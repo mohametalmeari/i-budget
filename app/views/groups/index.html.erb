@@ -1,6 +1,8 @@
 <div class="container">
   <header>
-    <%= link_to "🡠", root_path, class:"back-link"%>
+    <%= link_to root_path, class:"back-link" do %>
+      <%= image_tag 'back-arrow.svg', alt: '🡠', class: "back-img" %>
+    <% end %>
     <h2>CATEGORIES</h2>
     <span class="next-link"></span>
   </header>
@@ -12,7 +14,7 @@
             <div class="group-card">
               <%= image_tag (group.icon || 'icons/01.jpg'), alt: group.icon, class: "img-icon" %>
               <span class="card-name"><%= group.name %></span>
-              <span>$ <%= group.total_amount %></span>
+              <span class="amount">$ <%= group.total_amount %></span>
             </div>
           <% end %>
           <% if current_user.role == 'admin' %>
