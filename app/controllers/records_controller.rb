@@ -19,7 +19,7 @@ class RecordsController < ApplicationController
   def new
     @record = Record.new
     @group = Group.find(params[:group_id])
-    @groups = Group.all
+    @groups = Group.where(user_id: current_user)
   end
 
   def create
